@@ -37,5 +37,5 @@ copy Fixtures from 'C:\Fixtures.csv' DELIMITER ',' CSV HEADER;
 select Team_Name from TeamDetails full join Fixtures on 
 TeamDetails.team_name=Fixtures.team_lost where Fixtures.venue='Kolkata';
 
-
+added for change...
 
