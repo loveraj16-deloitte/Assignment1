@@ -1,0 +1,41 @@
+create table TeamDetails(
+	SI_No int primary key,
+	Team_Name varchar(40),
+	Captain varchar(40),
+	ownerr varchar(40),
+	Home_Ground varchar(40)
+
+)
+create table Fixtures(
+	Match_Number int primary key,
+	Home_Team varchar(40),
+	Away_Team varchar(40),
+	Venue varchar(40),
+	Team_Won varchar(40),
+	Team_Lost varchar(40)
+)
+create table Points(
+	Team_Name varchar(40),
+	No_of_wins int,
+	No_of_loss int,
+	points int
+)
+copy TeamDetails from 'C:\team-details (2).csv' DELIMITER ',' CSV HEADER;
+
+select * from TeamDetails;
+
+select count(*) from TeamDetails;
+
+select * from fixtures where home_team='RCB';
+
+copy Fixtures from 'C:\Fixtures.csv' DELIMITER ',' CSV HEADER;
+
+select * from fixtures where home_team='RCB'and venue='Bangalore';
+
+copy Fixtures from 'C:\Fixtures.csv' DELIMITER ',' CSV HEADER;
+
+select Team_Name from TeamDetails full join Fixtures on 
+TeamDetails.team_name=Fixtures.team_lost where Fixtures.venue='Kolkata';
+
+
+
